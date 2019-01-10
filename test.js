@@ -51,7 +51,7 @@ test('Testsing deleting an item from empty array', function(t) {
 });
 
 test('Testsing deleting an item without Id from empty array', function(t) {
-  var array = ['amin'];
+  var array = [{id:0,description:"helloworld"}];
   var id = null;
   var result = logic.deleteTodo(array,id);
   t.equal(result,-1,"done successfully");
@@ -59,7 +59,7 @@ test('Testsing deleting an item without Id from empty array', function(t) {
 });
 
 test('Testsing deleting an item with wrong Id from  array', function(t) {
-  var array = ['amin'];
+  var array = [{id:0,description:"helloworld"}];
   var id = -2;
   var result = logic.deleteTodo(array,id);
   t.equal(result,-1,"done successfully");
