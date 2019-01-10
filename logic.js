@@ -61,7 +61,7 @@ var todoFunctions = {
     // in the new todo array, all elements will remain unchanged except the one with id: idToMark
     // this element will have its done value toggled
     // hint: array.map
-
+    todoFunctions.cloneArrayOfObjects(todos);
     if(idToMark==null || idToMark<0)
       return -1;
     todos.map(e => {
