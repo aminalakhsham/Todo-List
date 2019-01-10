@@ -1,0 +1,24 @@
+{
+  "name": "Todo-List",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dom.js",
+  "scripts": {
+    "test": "tape test.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aminalakhsham/Todo-List.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aminalakhsham/Todo-List/issues"
+  },
+  "homepage": "https://github.com/aminalakhsham/Todo-List#readme",
+  "devDependencies": {
+    "tap-spec": "^5.0.0",
+    "tape": "^4.9.2"
+  }
+}
