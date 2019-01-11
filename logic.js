@@ -76,21 +76,8 @@ var todoFunctions = {
     // sortFunction will have same signature as the sort function in array.sort
     // hint: array.slice, array.sort
     let New = todoFunctions.cloneArrayOfObjects(todos)
-    let New1 =[];
-    New.map(function(e,i) {
-      if (e.done == sortFunction){
-        New1.push(e) ;
-      }else{
-        New1.unshift(e)
-      }
-    })
-    // for(var i=0; i<New.length; i++){
-    //   if (New[i].done == sortFunction){
-    //     New.push(New[i])
-    //     New.splice(i,1)
-    //   }
-    // }
-    return New1;
+    New.sort(function(a,b){return a.done-b.done});
+    return New;
   },
 };
 
