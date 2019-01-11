@@ -60,15 +60,10 @@ var todoFunctions = {
       return -1;
     New.map(e => {
       if(e.id === idToMark ){
-        if(e.done === false){
-          e.done = true
-        }else{
-          e.done = false
-        }
+        e.done = !(e.done)
       }
     })
     return New;
-
   },
   sortTodos: function(todos, sortFunction) {
     // stretch goal! Do this last
