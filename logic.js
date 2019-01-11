@@ -23,18 +23,12 @@ var todoFunctions = {
     });
   },
   
-// newTod
-  // {
-  //   id: 0,
-  //   description: 'smash avocados',
-  //   done: true,
-  // }
   addTodo: function(todos, newTodo) {
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // returns a new array, it should contain todos with the newTodo added to the end.
     // add an id to the newTodo. You can use the generateId function to create an id.
     // hint: array.concat
-    todoFunctions.cloneArrayOfObjects(todos);
+    let New = todoFunctions.cloneArrayOfObjects(todos)
     newTodoObj={}
     if(isNaN(newTodo) === false)
       return todos
@@ -42,29 +36,29 @@ var todoFunctions = {
       newTodoObj.id = todoFunctions.generateId();
     newTodoObj.description = newTodo
     newTodoObj.done = false;
-    todos.push(newTodoObj);
-    return todos;
+    New.push(newTodoObj);
+    return New;
   },
   deleteTodo: function(todos, idToDelete) {
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // return a new array, this should not contain any todo with an id of idToDelete
     // hint: array.filter
-    todoFunctions.cloneArrayOfObjects(todos);
+    let New = todoFunctions.cloneArrayOfObjects(todos)
     if(todos.length==0 || idToDelete==null || idToDelete<0){
       return -1;
     }
-    todos = todos.filter(todos => todos.id != idToDelete)
-    return todos;
+    New = New.filter(New => New.id != idToDelete)
+    return New;
   },
   markTodo: function(todos, idToMark) {
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // in the new todo array, all elements will remain unchanged except the one with id: idToMark
     // this element will have its done value toggled
     // hint: array.map
-    todoFunctions.cloneArrayOfObjects(todos);
+    let New = todoFunctions.cloneArrayOfObjects(todos)
     if(idToMark==null || idToMark<0)
       return -1;
-    todos.map(e => {
+    New.map(e => {
       if(e.id === idToMark ){
         if(e.done === false){
           e.done = true
@@ -73,20 +67,30 @@ var todoFunctions = {
         }
       }
     })
-    return todos;
+    return New;
+
   },
   sortTodos: function(todos, sortFunction) {
     // stretch goal! Do this last
     // should leave the input arguement todos unchanged (you can use cloneArrayOfObjects)
     // sortFunction will have same signature as the sort function in array.sort
     // hint: array.slice, array.sort
-    todoFunctions.cloneArrayOfObjects(todos);
-    for(var i=0; i<todos.length; i++){
-      if (todos[i].done == sortFunction){
-        todos.push(todos[i])
-        todos.splice(i,1)
+    let New = todoFunctions.cloneArrayOfObjects(todos)
+    let New1 =[];
+    New.map(function(e,i) {
+      if (e.done == sortFunction){
+        New1.push(e) ;
+      }else{
+        New1.unshift(e)
       }
-    }
+    })
+    // for(var i=0; i<New.length; i++){
+    //   if (New[i].done == sortFunction){
+    //     New.push(New[i])
+    //     New.splice(i,1)
+    //   }
+    // }
+    return New1;
   },
 };
 

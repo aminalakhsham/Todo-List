@@ -6,7 +6,11 @@
     var container = document.getElementById('todo-container');
     var addTodoForm = document.getElementById('add-todo');
     var state = []; // this is our initial todoList
-  
+    var sortodo = document.querySelector('.fas');
+    sortodo.addEventListener('click', function(e){
+      var newState = todoFunctions.sortTodos(state,true);
+      update(newState);
+    })
     // This function takes a todo, it returns the DOM node representing that todo
     var createTodoNode = function(todo) {
       var todoNode = document.createElement('li');
@@ -19,7 +23,7 @@
       // this adds the delete button
       var deleteButtonNode = document.createElement('i');
       deleteButtonNode.className="fas fa-trash-alt";
-      deleteButtonNode.addEventListener('click', function(event) {
+      deleteButtonNode.addEventListener('click', function() {
         var newState = todoFunctions.deleteTodo(state, todo.id);
         update(newState);
       });
@@ -27,7 +31,7 @@
       // add markTodo button
       var markButtonNode = document.createElement('i');
       markButtonNode.className="fas fa-check";
-      markButtonNode.addEventListener('click', function(event) {
+      markButtonNode.addEventListener('click', function() {
         var newState = todoFunctions.markTodo(state, todo.id);
         update(newState);
       });
@@ -48,11 +52,9 @@
         // what is inside event.target?
         var description = document.getElementsByClassName('input')[0].value; // event.target ....
         document.getElementsByClassName('input')[0].value =' '
-        console.log(typeof(description))
-        console.log(parseInt(description))
         // hint: todoFunctions.addTodo
-        var newState = state; // ?? change this!
-        todoFunctions.addTodo(newState,description);
+        var newState = todoFunctions.addTodo(state,description);; // ?? change this!
+        
         update(newState);
       });
     }

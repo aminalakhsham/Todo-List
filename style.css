@@ -12,7 +12,7 @@ span{
     width: 360px;
     margin: 100px auto;
     background: #f7f7f7;
-    box-shadow: 0 0 3px rgb(0,0,0, 0.1);
+    box-shadow: 0 0 3px rgb(0,0,0, 0.4);
 }
 h1{
     background: #2980b9;
@@ -22,13 +22,12 @@ h1{
     text-transform: uppercase;
     font-size: 24px;
     font-weight: normal;
+    display: flex;
+    justify-content: space-between;
 }
 .finish{
     text-decoration: line-through;
     color: gray;
-}
-.fa-plus{
-    float: right;
 }
 input{
     font-size: 18px;
