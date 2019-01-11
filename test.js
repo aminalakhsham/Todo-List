@@ -119,7 +119,7 @@ test('Testsing sorting (finish Todo) to last', function(t) {
   var expected = [{id:0,description:"helloworld",done:false},{id:0,description:"helloworld",done:false},{id:0,description:"helloworld",done:true}];
   var sort = true;
   var result = logic.sortTodos(array,true);
-  t.deepEqual(array,expected,"done successfully");
+  t.deepEqual(result,expected,"done successfully");
   t.end();
 });
 
