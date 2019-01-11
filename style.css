@@ -53,3 +53,6 @@ li{
     background: white;
     padding: 5px 5px 5px 15px;
 }
+li:nth-child(2n){
+    background: #dfdfdf;
+}
